@@ -22,7 +22,7 @@ class PostViewSet(LikedMixin, viewsets.ModelViewSet):
         return {"request": self.request}
 
     def get_permissions(self):
-        if self.action in ["create", "own"]:
+        if self.action in ["create", "own", "like", "unlike"]:
             permissions = [
                 p.IsAuthenticated,
             ]
